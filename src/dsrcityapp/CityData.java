@@ -196,4 +196,78 @@ public class CityData
             System.out.println("The counts are equal.");
         }
     }
+    
+    // New method to find the town or city with the largest latitude
+    public void findMaxLatitudeCity(CityData[] cityData) {
+        double maxLatitude = cityData[0].getLatitud();
+        int position = 0;
+
+        for (int k = 1; k < cityData.length; k++) {
+            if (cityData[k].getLatitud() > maxLatitude) {
+                maxLatitude = cityData[k].getLatitud();
+                position = k;
+            }
+        }
+
+        System.out.println(cityData[position].getCity() + " has the largest latitude.");
+    }
+
+    // New method to find the town or city with the smallest latitude
+    public void findMinLatitudeCity(CityData[] cityData) {
+        double minLatitude = cityData[0].getLatitud();
+        int position = 0;
+
+        for (int k = 1; k < cityData.length; k++) {
+            if (cityData[k].getLatitud() < minLatitude) {
+                minLatitude = cityData[k].getLatitud();
+                position = k;
+            }
+        }
+
+        System.out.println(cityData[position].getCity() + " has the smallest latitude.");
+    }
+
+    // New method to find the town or city with the smallest longitude
+    public void findMinLongitudeCity(CityData[] cityData) {
+        double minLongitude = cityData[0].getLongitude();
+        int position = 0;
+
+        for (int k = 1; k < cityData.length; k++) {
+            if (cityData[k].getLongitude() < minLongitude) {
+                minLongitude = cityData[k].getLongitude();
+                position = k;
+            }
+        }
+
+        System.out.println(cityData[position].getCity() + " has the smallest longitude.");
+    }
+
+    // New method to find the town or city with the largest longitude
+    public void findMaxLongitudeCity(CityData[] cityData) {
+        double maxLongitude = cityData[0].getLongitude();
+        int position = 0;
+
+        for (int k = 1; k < cityData.length; k++) {
+            if (cityData[k].getLongitude() > maxLongitude) {
+                maxLongitude = cityData[k].getLongitude();
+                position = k;
+            }
+        }
+
+        System.out.println(cityData[position].getCity() + " has the largest longitude.");
+    }
+    
+    // New method to generate city code
+    public String generateCityCode() {
+        String cityCode = "";
+
+        // Ensure the city name and state have at least 3 characters each
+        if (city.length() >= 3 && state.length() >= 3) {
+            cityCode = city.substring(0, 3).toUpperCase() + state.substring(0, 3).toUpperCase();
+        }
+
+        return cityCode;
+    }
+    
+    
 }
