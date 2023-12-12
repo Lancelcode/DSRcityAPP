@@ -155,4 +155,45 @@ public class CityData
             System.out.println(CityInfo[position].getCity()+ " has the least letters");
         }
     }
+    
+    public void getMaxName(CityData[] CityInfo) 
+    {
+        int maxCity = CityInfo[0].getCity().length();
+        int position = -1; // outside of the array
+
+        for (int k = 1; k < CityInfo.length; k++) {
+            if (CityInfo[k].getCity().length() > maxCity) {
+                maxCity = CityInfo[k].getCity().length();
+                position = k;
+            }
+        }
+
+        if (position >= 0) {
+            System.out.println(CityInfo[position].getCity() + " has the most letters");
+        }
+    }
+
+    public void countRanges(CityData[] cityData) {
+        int countAM = 0;
+        int countNZ = 0;
+
+        for (CityData cd : cityData) {
+            char firstChar = Character.toUpperCase(cd.getCity().charAt(0));
+
+            if (firstChar >= 'A' && firstChar <= 'M') {
+                countAM++;
+            } else if (firstChar >= 'N' && firstChar <= 'Z') {
+                countNZ++;
+            }
+        }
+
+        // Compare the counts
+        if (countAM > countNZ) {
+            System.out.println("There are more elements in the range A to M.");
+        } else if (countNZ > countAM) {
+            System.out.println("There are more elements in the range N to Z.");
+        } else {
+            System.out.println("The counts are equal.");
+        }
+    }
 }

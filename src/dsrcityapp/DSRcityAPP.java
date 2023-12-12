@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dsrcityapp;
 
 /**
@@ -25,8 +20,11 @@ public class DSRcityAPP {
         }
         
         city.getMinName(cd);
+        city.getMaxName(cd);
         //System.out.println(cd[250].getState());
         
+        // Call the new method to count elements in the ranges A to M and N to Z
+        city.countRanges(cd);
     }
     
 }
